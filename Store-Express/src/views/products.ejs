@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+    <!--Anadiendo CSS se agregan lienzos y normalizacion de navegadores web-->
+    <link rel="stylesheet" href="../../css/nomarlize.css" />
+    <!--Agregamos las fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=REM:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+
+  <body>
+    <%-include("partials/header.ejs")-%>
+    <%-include("partials/cart.ejs")-%>
+    <script src="../../js/scripts.cart.js"></script>
+
+    <script>
+      const img = document.getElementById("imgLogo");
+      console.log(img);
+      img.src = "../../img/logo.png";
+    </script>
+
+    <!--main es una etiqueta-->
+    <main class="contenedor">
+      <h1 id="title"><%= result.recordset[0].name %></h1>
+
+      <div class="camisa">
+        <img
+          class="camisa_imagen"
+          src="../../<%= result.recordset[0].img %>"
+          alt="camisa"
+        />
+
+        <div class="camisa_contenido">
+          <h1 id="price">$<%= result.recordset[0].price %></h1>
+
+          <p class="camisa_parrafo"><%= result.recordset[0].description %></p>
+
+          <form class="camisa_formulario">
+            <select name = "size" class="formulario__campo">
+              <option disabled selected>--Seleccionar Talla--</option>
+              <% if(result.recordset[0].size == 'C') {%>
+              <option>Chica</option>
+              <% } %> <% if(result.recordset[0].size == 'M') {%>
+              <option>Mediana</option>
+              <% } %> <% if(result.recordset[0].size == 'G') {%>
+              <option>Grande</option>
+              <% } %>
+            </select>
+            <input
+              class="formulario__campo"
+              type="number"
+              placeholder="Cantidad"
+              min="1"
+              name = "quantity"
+            />
+            <input
+              class="formulario__submit"
+              type="submit"
+              value="Agregar al carrito"
+              formaction="/playeras/products/<%= result.recordset[0].id %>"
+              formmethod="post"              
+            />
+          </form>
+
+          <script></script>
+        </div>
+      </div>
+    </main>
+    <script src="../../js/scripts.addCart.js"></script>
+
+    <%-include("partials/footer.ejs")-%>
+  </body>
+</html>

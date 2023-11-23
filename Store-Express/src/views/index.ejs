@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Frontend Store </title>
+    <!--Anadiendo CSS se agregan lienzos y normalizacion de navegadores web-->
+    <link rel = "stylesheet" href="css/nomarlize.css">
+    <!--Agregamos las fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=REM:wght@100&display=swap" rel="stylesheet">
+    
+    <link rel = "stylesheet" href="css/style.css">
+
+    
+</head>
+
+<body>
+    
+    <!--HEADER-->
+    <%-include("partials/header.ejs")-%>
+    <%-include("partials/cart.ejs")-%>
+    <script>
+        var infoCart = <%- JSON.stringify(infoCart) %>
+    </script>
+    <script src="js/scripts.cart.js"></script>
+    <!--main es una etiqueta-->
+    <main class="contenedor">
+        <h1>Nuestros productos</h1>
+        
+        <div class="grid seleccion">
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[0].id %>">                    
+                    <img id= <%= result.recordset[0].id %> class="producto__imagen" src= <%= result.recordset[0].img %> alt="imagen camisa">                  
+                </a>           
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[0].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[0].price %></p>
+                </div>    
+
+            </div> <!--FIN PRODUCTO-->
+            
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[1].id %>">
+                    <img id= <%= result.recordset[1].id %> class="producto__imagen" src= <%= result.recordset[1].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[1].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[1].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[2].id %>">
+                    <img id= <%= result.recordset[2].id %> class="producto__imagen" src= <%= result.recordset[2].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[2].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[2].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[3].id %>">
+                    <img id= <%= result.recordset[3].id %> class="producto__imagen" src= <%= result.recordset[3].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[3].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[3].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[4].id %>">
+                    <img id= <%= result.recordset[4].id %> class="producto__imagen" src= <%= result.recordset[4].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[4].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[4].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[5].id %>">
+                    <img id= <%= result.recordset[5].id %> class="producto__imagen" src= <%= result.recordset[5].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[5].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[5].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[6].id %>">
+                    <img id= <%= result.recordset[6].id %> class="producto__imagen" src= <%= result.recordset[6].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[6].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[6].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[7].id %>">
+                    <img id= <%= result.recordset[7].id %> class="producto__imagen" src= <%= result.recordset[7].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[7].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[7].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[8].id %>">
+                    <img id= <%= result.recordset[8].id %> class="producto__imagen" src= <%= result.recordset[8].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[8].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[8].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[9].id %>">
+                    <img id= <%= result.recordset[9].id %> class="producto__imagen" src= <%= result.recordset[9].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[9].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[9].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[10].id %>">
+                    <img id= <%= result.recordset[10].id %> class="producto__imagen" src= <%= result.recordset[10].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[10].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[10].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[11].id %>">
+                    <img id= <%= result.recordset[11].id %>class="producto__imagen" src= <%= result.recordset[11].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[11].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[11].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[12].id %>">
+                    <img id= <%= result.recordset[12].id %> class="producto__imagen" src= <%= result.recordset[12].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[12].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[12].price %></p>
+                </div>    
+            </div>
+
+            <div class="producto">
+                <a href="/playeras/products/<%= result.recordset[13].id %>">
+                    <img id= <%= result.recordset[13].id %> class="producto__imagen" src=<%= result.recordset[13].img %> alt="imagen camisa">
+                </a>
+                <div class="producto__informacion">
+                    <p class="producto__nombre"><%= result.recordset[13].name %></p>
+                    <p class="producto__precio">$<%= result.recordset[13].price %></p>
+                </div>    
+            </div>
+
+            <!--Grafico de imagenes de playeras-->
+            <div class="grafico grafico--camisas">
+
+                <img  id="product" src="img/grafico1.jpg" alt="grafico1">                
+
+            </div>
+            
+            <div class="grafico grafico--node">
+
+            </div>
+
+            <script src="js/scripts.js"></script>
+
+        </div>
+    </main>
+
+    <!--FOOTER-->
+    <%-include("partials/footer.ejs")-%>
+</body>
+</html>
